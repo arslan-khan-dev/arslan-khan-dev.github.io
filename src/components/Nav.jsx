@@ -5,6 +5,7 @@ import useActiveSection from '../hooks/useActiveSection.js'
 import withBase from '../utils/withBase.js'
 
 const LINKS = ['about', 'skills', 'experience', 'work', 'contact']
+const resumePath = withBase('../../public/assets/resume/Arslan-Khan-Resume.pdf')
 
 export default function Nav() {
   const [open, setOpen] = useState(false)
@@ -41,7 +42,7 @@ export default function Nav() {
           <button className="theme-toggle" type="button" onClick={toggleTheme} aria-label={`Switch to ${theme === 'dark' ? 'light' : 'dark'} mode`}>
             {theme === 'dark' ? <Icon.sun strokeWidth="1.8" /> : <Icon.moon strokeWidth="1.8" />}
           </button>
-          <a className="nav-cta" href={withBase('/resume.pdf')} download="Arslan_Khan_Resume.pdf">Download Resume</a>
+          <a className="nav-cta" href={resumePath} download="Arslan-Khan-Resume.pdf">Download Resume</a>
         </div>
 
         <button className="navtoggle" aria-label="Toggle menu" aria-expanded={open} onClick={() => setOpen((o) => !o)}>
