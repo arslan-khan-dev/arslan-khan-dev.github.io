@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react'
 import { Icon } from './Icons.jsx'
 import { profile } from '../data.js'
 import useActiveSection from '../hooks/useActiveSection.js'
+import withBase from '../utils/withBase.js'
 
 const LINKS = ['about', 'skills', 'experience', 'work', 'contact']
 
@@ -40,7 +41,7 @@ export default function Nav() {
           <button className="theme-toggle" type="button" onClick={toggleTheme} aria-label={`Switch to ${theme === 'dark' ? 'light' : 'dark'} mode`}>
             {theme === 'dark' ? <Icon.sun strokeWidth="1.8" /> : <Icon.moon strokeWidth="1.8" />}
           </button>
-          <a className="nav-cta" href="/resume.pdf" download="Arslan_Khan_Resume.pdf">Download Resume</a>
+          <a className="nav-cta" href={withBase('/resume.pdf')} download="Arslan_Khan_Resume.pdf">Download Resume</a>
         </div>
 
         <button className="navtoggle" aria-label="Toggle menu" aria-expanded={open} onClick={() => setOpen((o) => !o)}>

@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from 'react'
+import withBase from '../utils/withBase.js'
 
 export default function ProjectGallery({ images, url }) {
   const [idx, setIdx] = useState(0)
@@ -31,7 +32,7 @@ export default function ProjectGallery({ images, url }) {
         {images.map((img, i) => (
           <img
             key={img.src}
-            src={img.src}
+            src={withBase(img.src)}
             alt={img.alt}
             className={i === idx ? 'show' : ''}
           />
