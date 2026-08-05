@@ -38,7 +38,7 @@ export default function Contact() {
 
   useEffect(() => {
     if (!submitted) return;
-    const timer = setTimeout(() => setSubmitted(false), 5000);
+    const timer = setTimeout(() => setSubmitted(false), 3000);
     return () => clearTimeout(timer);
   }, [submitted]);
 
@@ -184,22 +184,6 @@ export default function Contact() {
                   Your message has been sent successfully. I'll get back to you
                   as soon as possible.
                 </p>
-                <button
-                  onClick={() => setSubmitted(false)}
-                  style={{
-                    background: "var(--lime)",
-                    color: "#0B1300",
-                    border: "none",
-                    padding: "12px 28px",
-                    borderRadius: "8px",
-                    fontFamily: "'JetBrains Mono', monospace",
-                    fontSize: "14px",
-                    fontWeight: "600",
-                    cursor: "pointer",
-                  }}
-                >
-                  Close
-                </button>
               </div>
             </div>
           )}
