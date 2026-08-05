@@ -38,7 +38,7 @@ export default function Contact() {
 
   useEffect(() => {
     if (!submitted) return;
-    const timer = setTimeout(() => setSubmitted(false), 3000);
+    const timer = setTimeout(() => setSubmitted(false), 4000);
     return () => clearTimeout(timer);
   }, [submitted]);
 
